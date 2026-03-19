@@ -112,8 +112,8 @@ export function InsightVoteCard({
             {hypotheses.map((h, i) => {
               const colors = hypothesisColor(h.type)
               return (
-                <div key={i} className="flex gap-2">
-                  <span className="text-xs px-2 py-0.5 rounded-full font-medium shrink-0 mt-0.5" style={{ backgroundColor: colors.bg, color: colors.text }}>
+                <div key={i} className="flex items-start gap-2">
+                  <span className="text-xs px-2 py-1 rounded-full font-medium shrink-0 leading-none" style={{ backgroundColor: colors.bg, color: colors.text }}>
                     {colors.label}
                   </span>
                   <p className="text-xs leading-relaxed" style={{ color: '#555' }}>{h.explanation}</p>
