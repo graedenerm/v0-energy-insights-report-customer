@@ -9,9 +9,9 @@ interface ImpressionSelectorProps {
 }
 
 const OPTIONS: { value: ImpressionValue; label: string; emoji: string }[] = [
-  { value: 'positive', label: 'Positiv', emoji: '👍' },
-  { value: 'neutral', label: 'Neutral', emoji: '↔' },
-  { value: 'negative', label: 'Negativ', emoji: '👎' },
+  { value: 'positive', label: 'Positiv',  emoji: '👍' },
+  { value: 'neutral',  label: 'Neutral',  emoji: '↔'  },
+  { value: 'negative', label: 'Negativ',  emoji: '👎' },
 ]
 
 export function ImpressionSelector({ value, onChange, disabled }: ImpressionSelectorProps) {
@@ -25,16 +25,17 @@ export function ImpressionSelector({ value, onChange, disabled }: ImpressionSele
             type="button"
             disabled={disabled}
             onClick={() => onChange(opt.value)}
-            className="flex-1 flex flex-col items-center gap-1 rounded-lg py-2 px-1 text-xs font-medium transition-all border"
+            className="flex flex-col items-center justify-center gap-1 rounded-xl py-2.5 text-xs font-semibold transition-all border"
             style={{
+              width: '80px',
               backgroundColor: isSelected ? '#E2EC2B' : 'white',
-              borderColor: isSelected ? '#E2EC2B' : '#D0D5DD',
-              color: '#00095B',
-              opacity: disabled ? 0.5 : 1,
-              cursor: disabled ? 'not-allowed' : 'pointer',
+              borderColor:     isSelected ? '#C8D100' : '#D0D5DD',
+              color:           '#00095B',
+              opacity:         disabled ? 0.5 : 1,
+              cursor:          disabled ? 'not-allowed' : 'pointer',
             }}
           >
-            <span className="text-base leading-none">{opt.emoji}</span>
+            <span className="text-lg leading-none">{opt.emoji}</span>
             <span>{opt.label}</span>
           </button>
         )
